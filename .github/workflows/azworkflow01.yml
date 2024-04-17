@@ -1,11 +1,15 @@
-name: azdeploy01
+name: azlogin
 
 on:
   push
 
 jobs:
-  Test-Job:
-    name: TestingWorkflowJob1
+  Test-login:
+    name: TestingLogon
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "This job was triggered by a ${{ github.event_name }} event."
+      - name: Azure Login
+        uses: Azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
