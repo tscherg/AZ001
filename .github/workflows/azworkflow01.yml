@@ -1,7 +1,7 @@
 name: azlogin
 
 on:
-  push
+  pull_request
 
 jobs:
   Test-login:
